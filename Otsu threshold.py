@@ -24,7 +24,6 @@ for (root, dirs, files) in os.walk(path):
         a_img = 255 - a_img
         print(a_img)
         kernel = np.ones((5, 5), np.uint8)
-        # 闭运算
         closing = cv2.morphologyEx(a_img, cv2.MORPH_CLOSE, kernel)
 
         cv2.imwrite(temp + b + '.png', closing)
