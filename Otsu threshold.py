@@ -1,4 +1,3 @@
-# 导入必要的库
 
 # -*- coding: cp936 -*-
 import os
