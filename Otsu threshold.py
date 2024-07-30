@@ -7,8 +7,8 @@ import cv2
 import cv2 as cv
 import matplotlib.pyplot as plt
 
-path = 'E:/yolov5-prune/shao/'
-cut_path = 'E:/yolov5-prune/WSP-PNG/OTSU+B/S+OTSU+B/'
+path = ''
+cut_path = ''
 
 for (root, dirs, files) in os.walk(path):
     temp = root.replace(path, cut_path)

@@ -46,14 +46,14 @@ class GA:
             mu = np.random.randint(0, len(parents))
             if fu != mu:
                 position = np.random.randint(0,
-                                             self.length)  # 随机选取交叉的基因位置(从右向左)
+                                             self.length)  
                 mask = 0
-                for i in range(position):  # 位运算
-                    mask = mask | (1 << i)  # mask的二进制串最终为position个1
+                for i in range(position):
+                    mask = mask | (1 << i)
                 fu = parents[fu]
                 mu = parents[mu]
                 child = (fu & mask) | (
-                        mu & ~mask)  # 孩子获得父亲在交叉点右边的基因、母亲在交叉点左边（包括交叉点）的基因，不是得到两个新孩子
+                        mu & ~mask)  
                 children.append(child)
         self.species = parents + children
 
@@ -105,7 +105,7 @@ def transition(yu, image):
                           255).reshape(-1))
     image.putdata(array)
     image.show()
-    image.save('D:/2.jpg')
+    image.save('')
 
 
 def main():
@@ -120,7 +120,7 @@ def main():
             # tu.show()
             gray = tu.convert('L')
             ga = GA(gray, 16)
-            print("种群变化为：")
+            print("zq：")
             for x in range(100):
                 ga.evolution()
                 print(ga.species)
@@ -146,6 +146,6 @@ def main():
             gray.save(os.path.join(temp, f'{b}.png'))
 
 
-path = 'E:/yolov5-prune/PeanutPicture/'
-cut_path = 'E:/yolov5-prune/PeanutPicture1/'
+path = ''
+cut_path = ''
 main()

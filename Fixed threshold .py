@@ -5,8 +5,8 @@ import cv2
 import cv2 as cv
 import matplotlib.pyplot as plt
 
-path = 'E:/yolov5-prune/123123123134124124124/'
-cut_path = 'E:/yolov5-prune/131241414141414/'
+path = ''
+cut_path = ''
 
 for (root, dirs, files) in os.walk(path):
     temp = root.replace(path, cut_path)
@@ -18,10 +18,9 @@ for (root, dirs, files) in os.walk(path):
         img = cv2.imread(os.path.join(root, file))
         # _, threshold_image = cv2.threshold(a_channel_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        ret1, thresh1 = cv2.threshold(gray, 198, 255, cv2.THRESH_BINARY_INV)
+        ret1, thresh1 = cv2.threshold(gray, x, 255, cv2.THRESH_BINARY_INV)
         thresh1 = 255 - thresh1
         kernel = np.ones((1, 1), np.uint8)
-        # 闭运算
         closing = cv2.morphologyEx(thresh1, cv2.MORPH_CLOSE, kernel)
         print(temp)
         print(b)
